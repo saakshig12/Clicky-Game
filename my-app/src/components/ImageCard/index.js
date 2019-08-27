@@ -5,9 +5,9 @@ function ImageCard(props) {
   return (
     <div className="card">
       <div className="img-container">
-        <img alt={props.name} src={props.image} />
+        <img alt={props.name} src={props.image} id={props.id}/>
       </div>
-      <span onClick={() => props.randomImage(props.id)} className="shuffle">
+      <span onClick={() => props.shuffleCards(props.id)} className="shuffle">
       </span>
     </div>
   );
