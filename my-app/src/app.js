@@ -9,13 +9,13 @@ class App extends Component {
     state = {
         images,
         clickId: [],
-        score: 0,
+        Score: 0,
         current: "",
     }
     shuffleImage = id => {
-        let clickId = this.state.clickId,
-        if(clickId === id){
-            this.setState({clickId: [], score = 0, current: "You clicked on this image twice, you lose"});
+        let clickId = this.state.clickId;
+        if(clickId === clickId.id){
+            this.setState({clickId: [], score: 0, current: "You clicked on this image twice, you lose"});
             return;
         } 
         else {
@@ -64,4 +64,5 @@ class App extends Component {
 
 };
 
+export default App; 
 
