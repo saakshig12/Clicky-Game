@@ -24,13 +24,13 @@ class App extends Component {
                 this.setState({score: 9, current: "You won! Great job.", clickId: []})
                 return;
             }
-            this.setState({ friends, clickedFriendIds, score: clickedFriendIds.length, status: " " });
-       for (let i =friends.length - 1; i > 0; i--) {
-         let j =Math.floor(Math.random() * (i + 1));
-         [friends[i], friends[j]] = [friends[j], friends[i]];
+    //         this.setState({ friends, clickedFriendIds, score: clickedFriendIds.length, status: " " });
+    //    for (let i =friends.length - 1; i > 0; i--) {
+    //      let j =Math.floor(Math.random() * (i + 1));
+    //      [friends[i], friends[j]] = [friends[j], friends[i]];
         }
     };
-};
+
     render() {
         return (
           <div className="App">
@@ -43,7 +43,6 @@ class App extends Component {
               <h2>Try not to click on an image twice!</h2>
             </header>
             <Score total={this.state.score}
-                    goal={12}
                     status={this.state.status}
                     />
             <Wrapper>
@@ -53,12 +52,16 @@ class App extends Component {
                 id={image.id}
                 key={image.id}
                 image={image.image}
+                clickId={image.clicked}
                 />
     
               ))}
             </Wrapper>
           </div>
         );
-      }
+    };
+      
 
 };
+
+
