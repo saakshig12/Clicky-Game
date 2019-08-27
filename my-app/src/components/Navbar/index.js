@@ -1,16 +1,14 @@
 import React from "react";
-//import "./style.css";
-// import Counter from "./Counter";
+import "./style.css";
+
 
 function Navbar(props) {
-  return 
-  <h1 className="navbar">{props.children}</h1>;
-  <div className="scores">
-      Score: {props.score} Current: {props.current}
-    </div>
-  
-  
-
+  return (
+    <div className="container">
+  <h1 className="navbar">{props.children}</h1>
+  <p className="scores">Score: {props.score} {"   "} Current: {props.current}</p>
+  </div>
+  );
 }
 
 export default Navbar;

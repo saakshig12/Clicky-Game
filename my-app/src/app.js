@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import ImageCard from "./components/ImageCard";
+import AnimalCard from "./components/AnimalCard";
 import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
-import images from "./images.json";
+import animals from "./Animals.json";
 
 
 class App extends Component {
     state = {
-        images,
+        animals,
         clickId: [],
         Score: 0,
         current: "",
@@ -24,12 +24,13 @@ class App extends Component {
                 this.setState({score: 9, current: "You won! Great job.", clickId: []})
                 return;
             }
-    //         this.setState({ friends, clickedFriendIds, score: clickedFriendIds.length, status: " " });
-    //    for (let i =friends.length - 1; i > 0; i--) {
-    //      let j =Math.floor(Math.random() * (i + 1));
-    //      [friends[i], friends[j]] = [friends[j], friends[i]];
+            this.setState({ animals, clickId, score: clickId.length, status: " " });
+       for (let i =animals.length - 1; i > 0; i--) {
+         let j =Math.floor(Math.random() * (i + 1));
+         [animals[i], animals[j]] = [animals[j], animals[i]];
         }
     };
+  };
 
     render() {
         return (
@@ -42,27 +43,27 @@ class App extends Component {
               <h1 className="App-title">Clicky</h1>
               <h2>Try not to click on an image twice!</h2>
             </header>
-            <Score total={this.state.score}
+            {/* <Score total={this.state.score}
                     status={this.state.status}
-                    />
+                    /> */}
             <Wrapper>
-              {this.state.images.map(image => (
-                <ImageCard
+              {this.state.images.map(images => {
+                return(
+                <AnimalCard
                 shuffleImage={this.shuffleImage}
-                id={image.id}
-                key={image.id}
-                image={image.image}
-                clickId={image.clicked}
+                id={animals.id}
+                key={animals.id}
+                image={animals.image}
+                clickId={animals.clicked}
                 />
+                )
     
-              ))}
+                })}
             </Wrapper>
           </div>
         );
     };
-      
-
-};
+}
 
 export default App; 
 
