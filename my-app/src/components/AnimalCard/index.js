@@ -6,8 +6,7 @@ function AnimalCard(props) {
   return (
     <div className="card">
       <div className="img-container">
-        <img alt={props.name} src={props.image} id={props.id}/>
-        onClick={() => props.shuffleCards(props.id)}  
+        <img alt={props.image} src={props.image} id={props.id}/>
       </div>   
     </div>
   );

@@ -65,16 +65,11 @@
 },
 {
     "id": 14,
-    "image": "https://images.app.goo.gl/WJU16DGCQERBjNJS6",
-    "clicked": false
-},
-{
-    "id": 15,
     "image": "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1082511254%2F960x0.jpg%3Ffit%3Dscale",
     "clicked": false
 },
 {
-    "id": 16,
+    "id": 15,
     "image": "https://guidetoiceland.imgix.net/336372/x/0/wildlife-and-animals-in-iceland-10?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.0.0&w=883&s=850077f3ef0b03125349bcb2a226b004",
     "clicked": false
 }
