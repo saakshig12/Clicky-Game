@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AnimalCard from "./components/AnimalCard";
-// import Wrapper from "./components/Wrapper";
+import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
 import animals from "./Animals.json";
 
@@ -20,37 +20,49 @@ class App extends Component {
     console.log("has been clicked");
     this.setState({ animals })
   }
+  // handleClick = () => {
+  //   this.shuffledAnimals();
+  // }
 
-  handleClick = () => {
+  handleClick = (id) => {
     this.shuffledAnimals();
-    // let click = this.props.id.onClick;
-    animals.forEach(id =>
-      {animal.clicked === "true"}
-      // console.log(this.)
-    );
-    // if(animals.clicked === "true") {
-    //   message =  "Sorry! You clicked on the same image twice!"
-    //   //add something here to restart the game
-    // }
-    // else {
-    //   message = "Good job, keep going"
-     }
-  
+    // const { animals } = this.state;
+
+    console.log(animals);
+
+    this.state.animals.map(animal => {
+      if(animal.id === id) {
+        console.log(animal.id);
+        if(animal.clicked === false) {
+          animal.clicked = true
+        }
+        else {
+          alert("lost the game")
+        }
+
+      }
+    })
+
+}
+
 
   render() {
 
     return (
       <div>
-        <Navbar />
-
-        {animals.map(animal => (
-          <AnimalCard
-            id={animal.id}
-            key={animal.id}
-            image={animal.image}
-            handleClick={this.handleClick}
-          />
-        ))}
+        <Wrapper>
+          <Navbar />
+          <div className="animal-images">
+          {animals.map(animal => (
+            <AnimalCard
+              id={animal.id}
+              key={animal.id}
+              image={animal.image}
+              handleClick={this.handleClick}
+            />
+          ))}
+          </div>
+        </Wrapper>
       </div>
     )
     // <div className="app">
