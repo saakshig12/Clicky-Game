@@ -12,12 +12,9 @@ class App extends Component {
     score: 0,
     current: "",
   }
-  shuffleCard = (id) => {
-    onClick
-    let shuffle = Math.floor(Math.random(0, 9) * 2);
-  }
+  
 
-};
+
 
 render() {
   return (
@@ -26,27 +23,31 @@ render() {
         count={this.state.current}
         score={this.state.score}
       />
-      <header className="App-header">
-        <h1 className="App-title">Clicky</h1>
+      <div className="jumbotron">
+      <header className="header">
+        <h1 className="title">Clicky</h1>
         <h2>Try not to click on an image twice!</h2>
       </header>
+      </div>
 
       <Wrapper>
-        {this.state.images.map(images => {
+        <div className="row">
+        {this.state.animals.map(animals => {
           return (
             <AnimalCard
               id={animals.id}
               key={animals.id}
               image={animals.image}
               clickId={animals.clicked}
-              shuffleCard={image.shuffleCard}
+              shuffleCard={animals.shuffleCard}
             />
           )
-
-        })}
+          })}
+        </div>
       </Wrapper>
     </div>
-  );
+  )
+};
 }
 
 
